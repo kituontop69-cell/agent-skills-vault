@@ -1,716 +1,460 @@
 ---
 name: git-workflow
-description: Git workflow patterns including branching strategies, commit conventions, keeping history clean and readable, tidying local commits before merging, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes. Use when choosing a branching strategy, writing commit conventions, cleaning up history before a pull request, deciding merge versus rebase, or resolving conflicts.
+description: Implement Git branching strategies, PR workflows, and release management
+  patterns.
+category: devops
+risk: critical
+source: https://github.com/BagelHole/DevOps-Security-Agent-Skills
+source_repo: BagelHole/DevOps-Security-Agent-Skills
+source_type: community
+date_added: '2026-09-20'
+license: MIT
+license_source: https://github.com/BagelHole/DevOps-Security-Agent-Skills/blob/main/LICENSE
+compatibility: Requires the relevant platform CLIs (kubectl, helm, terraform, git,
+  CI runners) and authorized access to the target environment. Docs-only; helper scripts
+  and templates not bundled.
 metadata:
-  origin: ECC
+  author: devops-skills
+  version: '1.0'
 ---
 
-# Git Workflow Patterns
+# Git Workflow
 
-Best practices for Git version control, branching strategies, and collaborative development.
+Implement effective branching strategies and pull request workflows for team collaboration.
 
-## When to Activate
+## When to Use This Skill
 
-- Setting up Git workflow for a new project
-- Deciding on branching strategy (GitFlow, trunk-based, GitHub flow)
-- Writing commit messages and PR descriptions
-- Resolving merge conflicts
-- Managing releases and version tags
-- Onboarding new team members to Git practices
+Use this skill when:
+- Establishing team Git workflows
+- Implementing branching strategies
+- Configuring pull request processes
+- Setting up release management
+- Improving code review practices
+
+## Prerequisites
+
+- Git installed
+- Repository hosting (GitHub, GitLab, Bitbucket)
+- Basic Git knowledge
+
+Repository instructions and branch protection take precedence over every generic example here. Rebase/reset/force-push only within authorized topic history; preserve dirty work, never rewrite shared history silently, and use repository release scripts when required. Stage explicit reviewed paths rather than unrelated files.
 
 ## Branching Strategies
 
-### GitHub Flow (Simple, Recommended for Most)
+### Trunk-Based Development
 
-Best for continuous deployment and small-to-medium teams.
-
-```
-main (protected, always deployable)
-  │
-  ├── feature/user-auth      → PR → merge to main
-  ├── feature/payment-flow   → PR → merge to main
-  └── fix/login-bug          → PR → merge to main
-```
-
-**Rules:**
-- `main` is always deployable
-- Create feature branches from `main`
-- Open Pull Request when ready for review
-- After approval and CI passes, merge to `main`
-- Deploy immediately after merge
-
-### Trunk-Based Development (High-Velocity Teams)
-
-Best for teams with strong CI/CD and feature flags.
+Best for: Continuous deployment, small teams, mature CI/CD
 
 ```
-main (trunk)
-  │
-  ├── short-lived feature (1-2 days max)
-  ├── short-lived feature
-  └── short-lived feature
+main ─────●─────●─────●─────●─────●─────●─────●
+          │     │     │     │     │     │
+          └─●   └─●   └─●   └─●   └─●   └─●
+         feature branches (short-lived)
 ```
 
-**Rules:**
-- Everyone commits to `main` or very short-lived branches
-- Feature flags hide incomplete work
-- CI must pass before merge
-- Deploy multiple times per day
+```bash
+# Create short-lived feature branch
+git checkout main
+git pull origin main
+git checkout -b feature/add-login
 
-### GitFlow (Complex, Release-Cycle Driven)
+# Work and commit frequently
+git add .
+git commit -m "feat: add login form"
 
-Best for scheduled releases and enterprise projects.
+# Keep branch updated
+git fetch origin
+git rebase origin/main
 
-```
-main (production releases)
-  │
-  └── develop (integration branch)
-        │
-        ├── feature/user-auth
-        ├── feature/payment
-        │
-        ├── release/1.0.0    → merge to main and develop
-        │
-        └── hotfix/critical  → merge to main and develop
+# Publish the topic branch and open a pull request
+git push -u origin feature/add-login
+# Merge only through the repository-required protected review/check workflow.
+# Delete the topic branch after the remote merge is confirmed.
 ```
 
-**Rules:**
-- `main` contains production-ready code only
-- `develop` is the integration branch
-- Feature branches from `develop`, merge back to `develop`
-- Release branches from `develop`, merge to `main` and `develop`
-- Hotfix branches from `main`, merge to both `main` and `develop`
+### GitHub Flow
 
-### When to Use Which
-
-| Strategy | Team Size | Release Cadence | Best For |
-|----------|-----------|-----------------|----------|
-| GitHub Flow | Any | Continuous | SaaS, web apps, startups |
-| Trunk-Based | 5+ experienced | Multiple/day | High-velocity teams, feature flags |
-| GitFlow | 10+ | Scheduled | Enterprise, regulated industries |
-
-## Commit Messages
-
-### Conventional Commits Format
+Best for: Continuous delivery, web applications
 
 ```
-<type>(<scope>): <subject>
+main ─────●─────●───────────●─────────────●─────●
+          │           ↑           ↑       ↑
+          └───●───●───┘           │       │
+              feature/login       │       │
+                                  │       │
+          └───●───●───●───●───────┘       │
+              feature/dashboard           │
+                                          │
+          └───●─────────────────────────┘
+              hotfix/security-patch
+```
+
+```bash
+# Create feature branch from main
+git checkout main
+git pull origin main
+git checkout -b feature/user-dashboard
+
+# Push and create PR
+git push -u origin feature/user-dashboard
+
+# After review, merge via PR (squash recommended)
+# Delete branch after merge
+```
+
+### GitFlow
+
+Best for: Scheduled releases, versioned products
+
+```
+main     ────────●────────────────●──────────────●
+                 ↑                ↑              ↑
+release  ────────┼────●───●──────┼──────────────┼
+                 │    │   │      │              │
+develop  ───●────●────┼───●──●───●───●───●───●──┼
+            │         │      │       │   │      │
+feature  ───┴─────────┘      │       │   │      │
+                             │       │   │      │
+hotfix   ────────────────────┴───────┼───┼──────┘
+                                     │   │
+feature  ────────────────────────────┴───┘
+```
+
+```bash
+# Initialize GitFlow
+git flow init
+
+# Start feature
+git flow feature start user-auth
+
+# Finish feature (merges to develop)
+git flow feature finish user-auth
+
+# Start release
+git flow release start 1.0.0
+
+# Finish release (merges to main and develop)
+git flow release finish 1.0.0
+
+# Hotfix
+git flow hotfix start security-fix
+git flow hotfix finish security-fix
+```
+
+## Commit Conventions
+
+### Conventional Commits
+
+```
+<type>(<scope>): <description>
 
 [optional body]
 
 [optional footer(s)]
 ```
 
-### Types
+Types:
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation
+- `style`: Formatting
+- `refactor`: Code restructuring
+- `test`: Adding tests
+- `chore`: Maintenance
 
-| Type | Use For | Example |
-|------|---------|---------|
-| `feat` | New feature | `feat(auth): add OAuth2 login` |
-| `fix` | Bug fix | `fix(api): handle null response in user endpoint` |
-| `docs` | Documentation | `docs(readme): update installation instructions` |
-| `style` | Formatting, no code change | `style: fix indentation in login component` |
-| `refactor` | Code refactoring | `refactor(db): extract connection pool to module` |
-| `test` | Adding/updating tests | `test(auth): add unit tests for token validation` |
-| `chore` | Maintenance tasks | `chore(deps): update dependencies` |
-| `perf` | Performance improvement | `perf(query): add index to users table` |
-| `ci` | CI/CD changes | `ci: add PostgreSQL service to test workflow` |
-| `revert` | Revert previous commit | `revert: revert "feat(auth): add OAuth2 login"` |
+Examples:
+```bash
+git commit -m "feat(auth): add OAuth2 login support"
+git commit -m "fix(api): handle null response from payment service"
+git commit -m "docs: update API documentation for v2 endpoints"
+git commit -m "refactor(db): optimize user query performance"
 
-### Good vs Bad Examples
+# Breaking change
+git commit -m "feat(api)!: change response format for user endpoint
 
-```
-# BAD: Vague, no context
-git commit -m "fixed stuff"
-git commit -m "updates"
-git commit -m "WIP"
-
-# GOOD: Clear, specific, explains why
-git commit -m "fix(api): retry requests on 503 Service Unavailable
-
-The external API occasionally returns 503 errors during peak hours.
-Added exponential backoff retry logic with max 3 attempts.
-
-Closes #123"
+BREAKING CHANGE: The user endpoint now returns an object instead of array"
 ```
 
 ### Commit Message Template
 
-Create `.gitmessage` in repo root:
-
-```
-# <type>(<scope>): <subject>
-# # Types: feat, fix, docs, style, refactor, test, chore, perf, ci, revert
-# Scope: api, ui, db, auth, etc.
-# Subject: imperative mood, no period, max 50 chars
-#
-# [optional body] - explain why, not what
-# [optional footer] - Breaking changes, closes #issue
-```
-
-Enable with: `git config commit.template .gitmessage`
-
-## Merge vs Rebase
-
-### Merge (Preserves History)
-
 ```bash
-# Creates a merge commit
-git checkout main
-git merge feature/user-auth
+# Create template file ~/.gitmessage
+# Subject line (50 chars max)
 
-# Result:
-# *   merge commit
-# |\
-# | * feature commits
-# |/
-# * main commits
-```
+# Body (72 chars per line max)
+# - What changed
+# - Why it changed
+# - Any side effects
 
-**Use when:**
-- Merging feature branches into `main`
-- You want to preserve exact history
-- Multiple people worked on the branch
-- The branch has been pushed and others may have based work on it
+# Footer
+# Fixes #123
+# Co-authored-by: Name <email>
 
-### Rebase (Linear History)
-
-```bash
-# Rewrites feature commits onto target branch
-git checkout feature/user-auth
-git rebase main
-
-# Result:
-# * feature commits (rewritten)
-# * main commits
-```
-
-**Use when:**
-- Updating your local feature branch with latest `main`
-- You want a linear, clean history
-- The branch is local-only (not pushed)
-- You're the only one working on the branch
-
-### Rebase Workflow
-
-```bash
-# Update feature branch with latest main (before PR)
-git checkout feature/user-auth
-git fetch origin
-git rebase origin/main
-
-# Fix any conflicts
-# Tests should still pass
-
-# Force push (only if you're the only contributor)
-git push --force-with-lease origin feature/user-auth
-```
-
-### When NOT to Rebase
-
-```
-# NEVER rebase branches that:
-- Have been pushed to a shared repository
-- Other people have based work on
-- Are protected branches (main, develop)
-- Are already merged
-
-# Why: Rebase rewrites history, breaking others' work
+# Configure Git to use template
+git config --global commit.template ~/.gitmessage
 ```
 
 ## Pull Request Workflow
 
-### PR Title Format
-
-```
-<type>(<scope>): <description>
-
-Examples:
-feat(auth): add SSO support for enterprise users
-fix(api): resolve race condition in order processing
-docs(api): add OpenAPI specification for v2 endpoints
-```
-
-### PR Description Template
+### PR Template
 
 ```markdown
-## What
+<!-- .github/pull_request_template.md -->
+## Description
+Brief description of changes
 
-Brief description of what this PR does.
-
-## Why
-
-Explain the motivation and context.
-
-## How
-
-Key implementation details worth highlighting.
+## Type of Change
+- [ ] Bug fix (non-breaking change)
+- [ ] New feature (non-breaking change)
+- [ ] Breaking change
+- [ ] Documentation update
 
 ## Testing
-
 - [ ] Unit tests added/updated
 - [ ] Integration tests added/updated
 - [ ] Manual testing performed
 
-## Screenshots (if applicable)
-
-Before/after screenshots for UI changes.
-
 ## Checklist
-
 - [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Comments added for complex logic
+- [ ] Self-review performed
 - [ ] Documentation updated
 - [ ] No new warnings introduced
-- [ ] Tests pass locally
-- [ ] Related issues linked
 
-Closes #123
+## Related Issues
+Closes #
+
+## Screenshots (if applicable)
 ```
 
-### Code Review Checklist
+### Branch Protection Rules
 
-**For Reviewers:**
+```yaml
+# GitHub branch protection
+branch_protection:
+  branch: main
+  required_pull_request_reviews:
+    required_approving_review_count: 1
+    dismiss_stale_reviews: true
+    require_code_owner_reviews: true
+  required_status_checks:
+    strict: true
+    contexts:
+      - "ci/tests"
+      - "ci/lint"
+  restrictions:
+    users: []
+    teams: ["maintainers"]
+  enforce_admins: true
+  required_linear_history: true
+  allow_force_pushes: false
+  allow_deletions: false
+```
 
-- [ ] Does the code solve the stated problem?
-- [ ] Are there any edge cases not handled?
-- [ ] Is the code readable and maintainable?
-- [ ] Are there sufficient tests?
-- [ ] Are there security concerns?
-- [ ] Is the commit history clean (squashed if needed)?
+### Code Owners
 
-**For Authors:**
+```
+# .github/CODEOWNERS
 
-- [ ] Self-review completed before requesting review
-- [ ] CI passes (tests, lint, typecheck)
-- [ ] PR size is reasonable (<500 lines ideal)
-- [ ] Related to a single feature/fix
-- [ ] Description clearly explains the change
+# Default owners
+* @team-leads
 
-## Conflict Resolution
+# Frontend code
+/src/frontend/ @frontend-team
+*.tsx @frontend-team
+*.css @frontend-team
 
-### Identify Conflicts
+# Backend code
+/src/api/ @backend-team
+/src/services/ @backend-team
+
+# Infrastructure
+/terraform/ @platform-team
+/k8s/ @platform-team
+Dockerfile @platform-team
+
+# Documentation
+/docs/ @tech-writers
+*.md @tech-writers
+```
+
+## Git Hooks
+
+### Pre-commit Hook
 
 ```bash
-# Check for conflicts before merge
-git checkout main
-git merge feature/user-auth --no-commit --no-ff
+#!/bin/sh
+# .git/hooks/pre-commit
 
-# If conflicts, Git will show:
-# CONFLICT (content): Merge conflict in src/auth/login.ts
-# Automatic merge failed; fix conflicts and then commit the result.
+# Run linting
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Fix errors before committing."
+  exit 1
+fi
+
+# Run tests
+npm run test:unit
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Fix tests before committing."
+  exit 1
+fi
+
+# Check for debug statements
+if grep -r "console.log\|debugger\|binding.pry" --include="*.js" --include="*.ts" --include="*.rb" src/; then
+  echo "Remove debug statements before committing."
+  exit 1
+fi
 ```
 
-### Resolve Conflicts
+### Using Husky
 
-```bash
-# See conflicted files
-git status
-
-# View conflict markers in file
-# <<<<<<< HEAD
-# content from main
-# =======
-# content from feature branch
-# >>>>>>> feature/user-auth
-
-# Option 1: Manual resolution
-# Edit file, remove markers, keep correct content
-
-# Option 2: Use merge tool
-git mergetool
-
-# Option 3: Accept one side
-git checkout --ours src/auth/login.ts    # Keep main version
-git checkout --theirs src/auth/login.ts  # Keep feature version
-
-# After resolving, stage and commit
-git add src/auth/login.ts
-git commit
+```json
+// package.json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{css,scss}": ["prettier --write"]
+  }
+}
 ```
 
-### Conflict Prevention Strategies
+### Commitlint Configuration
 
-```bash
-# 1. Keep feature branches small and short-lived
-# 2. Rebase frequently onto main
-git checkout feature/user-auth
-git fetch origin
-git rebase origin/main
-
-# 3. Communicate with team about touching shared files
-# 4. Use feature flags instead of long-lived branches
-# 5. Review and merge PRs promptly
+```javascript
+// commitlint.config.js
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'revert']
+    ],
+    'subject-max-length': [2, 'always', 72],
+    'body-max-line-length': [2, 'always', 100]
+  }
+};
 ```
 
-## Branch Management
+## Release Workflow
 
-### Naming Conventions
-
-```
-# Feature branches
-feature/user-authentication
-feature/JIRA-123-payment-integration
-
-# Bug fixes
-fix/login-redirect-loop
-fix/456-null-pointer-exception
-
-# Hotfixes (production issues)
-hotfix/critical-security-patch
-hotfix/database-connection-leak
-
-# Releases
-release/1.2.0
-release/2024-01-hotfix
-
-# Experiments/POCs
-experiment/new-caching-strategy
-poc/graphql-migration
-```
-
-### Branch Cleanup
-
-```bash
-# Delete local branches that are merged
-git branch --merged main | grep -v "^\*\|main" | xargs -n 1 git branch -d
-
-# Delete remote-tracking references for deleted remote branches
-git fetch -p
-
-# Delete local branch
-git branch -d feature/user-auth  # Safe delete (only if merged)
-git branch -D feature/user-auth  # Force delete
-
-# Delete remote branch
-git push origin --delete feature/user-auth
-```
-
-### Stash Workflow
-
-```bash
-# Save work in progress
-git stash push -m "WIP: user authentication"
-
-# List stashes
-git stash list
-
-# Apply most recent stash
-git stash pop
-
-# Apply specific stash
-git stash apply stash@{2}
-
-# Drop stash
-git stash drop stash@{0}
-```
-
-## Release Management
-
-### Semantic Versioning
-
-```
-MAJOR.MINOR.PATCH
-
-MAJOR: Breaking changes
-MINOR: New features, backward compatible
-PATCH: Bug fixes, backward compatible
-
-Examples:
-1.0.0 → 1.0.1 (patch: bug fix)
-1.0.1 → 1.1.0 (minor: new feature)
-1.1.0 → 2.0.0 (major: breaking change)
-```
-
-### Creating Releases
+### Automated Release with Tags
 
 ```bash
 # Create annotated tag
-git tag -a v1.2.0 -m "Release v1.2.0
+git tag -a v1.0.0 -m "Release version 1.0.0"
 
-Features:
-- Add user authentication
-- Implement password reset
+# Push tag
+git push origin v1.0.0
 
-Fixes:
-- Resolve login redirect issue
-
-Breaking Changes:
-- None"
-
-# Push tag to remote
-git push origin v1.2.0
-
-# List tags
-git tag -l
-
-# Delete tag
-git tag -d v1.2.0
-git push origin --delete v1.2.0
+# Create release from tag (GitHub CLI)
+gh release create v1.0.0 \
+  --title "Release 1.0.0" \
+  --notes "Release notes here" \
+  --target main
 ```
 
 ### Changelog Generation
 
 ```bash
-# Generate changelog from commits
-git log v1.1.0..v1.2.0 --oneline --no-merges
+# Using conventional-changelog
+npx conventional-changelog -p angular -i CHANGELOG.md -s
 
-# Or use conventional-changelog
-npx conventional-changelog -i CHANGELOG.md -s
+# Using git-cliff
+git cliff -o CHANGELOG.md
 ```
 
-## Git Configuration
+## Common Git Operations
 
-### Essential Configs
+### Rebase vs Merge
 
 ```bash
-# User identity
-git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
+# Rebase (clean history)
+git checkout feature/my-feature
+git rebase main
+git push --force-with-lease
 
-# Default branch name
-git config --global init.defaultBranch main
-
-# Pull behavior (rebase instead of merge)
-git config --global pull.rebase true
-
-# Push behavior (push current branch only)
-git config --global push.default current
-
-# Auto-correct typos
-git config --global help.autocorrect 1
-
-# Better diff algorithm
-git config --global diff.algorithm histogram
-
-# Color output
-git config --global color.ui auto
-```
-
-### Useful Aliases
-
-```bash
-# Add to ~/.gitconfig
-[alias]
-    co = checkout
-    br = branch
-    ci = commit
-    st = status
-    unstage = reset HEAD --
-    last = log -1 HEAD
-    visual = log --oneline --graph --all
-    amend = commit --amend --no-edit
-    wip = commit -m "WIP"
-    undo = reset --soft HEAD~1
-    contributors = shortlog -sn
-```
-
-### Gitignore Patterns
-
-```gitignore
-# Dependencies
-node_modules/
-vendor/
-
-# Build outputs
-dist/
-build/
-*.o
-*.exe
-
-# Environment files
-.env
-.env.local
-.env.*.local
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Test coverage
-coverage/
-
-# Cache
-.cache/
-*.tsbuildinfo
-```
-
-## Common Workflows
-
-### Starting a New Feature
-
-```bash
-# 1. Update main branch
+# Merge (preserve history)
 git checkout main
-git pull origin main
+git merge feature/my-feature
 
-# 2. Create feature branch
-git checkout -b feature/user-auth
-
-# 3. Make changes and commit
-git add .
-git commit -m "feat(auth): implement OAuth2 login"
-
-# 4. Push to remote
-git push -u origin feature/user-auth
-
-# 5. Create Pull Request on GitHub/GitLab
+# Squash merge (single commit)
+git merge --squash feature/my-feature
+git commit -m "feat: add feature X"
 ```
 
-### Updating a PR with New Changes
+### Cherry Pick
 
 ```bash
-# 1. Make additional changes
-git add .
-git commit -m "feat(auth): add error handling"
+# Apply specific commit to current branch
+git cherry-pick abc123
 
-# 2. Push updates
-git push origin feature/user-auth
+# Cherry pick range
+git cherry-pick abc123..def456
+
+# Cherry pick without committing
+git cherry-pick -n abc123
 ```
 
-### Syncing Fork with Upstream
+### Interactive Rebase
 
 ```bash
-# 1. Add upstream remote (once)
-git remote add upstream https://github.com/original/repo.git
+# Clean up last 3 commits
+git rebase -i HEAD~3
 
-# 2. Fetch upstream
-git fetch upstream
-
-# 3. Merge upstream/main into your main
-git checkout main
-git merge upstream/main
-
-# 4. Push to your fork
-git push origin main
+# In editor:
+# pick abc123 First commit
+# squash def456 Second commit
+# reword ghi789 Third commit
 ```
 
-### Undoing Mistakes
+## Common Issues
+
+### Issue: Merge Conflicts
+**Problem**: Conflicts when merging branches
+**Solution**: Rebase frequently, communicate with team, use smaller PRs
+
+### Issue: Diverged Branches
+**Problem**: Local branch far behind remote
+**Solution**: `git pull --rebase` or `git fetch && git rebase origin/main`
+
+### Issue: Accidental Commit to Wrong Branch
+**Problem**: Committed to main instead of feature
+**Solution**: `git reset HEAD~1`, checkout correct branch, recommit
+
+## Best Practices
+
+- Keep branches short-lived (< 1 week)
+- Write meaningful commit messages
+- Use PR templates consistently
+- Require code reviews
+- Protect main/master branch
+- Automate checks with CI
+- Squash merge for clean history
+- Delete branches after merge
+
+## Related Skills
+
+- semantic-versioning (`semantic-versioning`) - Version management
+- github-actions (`github-actions`) - CI/CD automation
+- feature-flags (`feature-flags`) - Feature management
+
+## Limitations
+
+- Guidance executes against real environments: confirm target, blast radius, and rollback plan before applying anything.
+- Never deploy to production without explicit approval. Docs-only import: upstream scripts and templates not bundled.
+
+### Example
 
 ```bash
-# Undo last commit (keep changes)
-git reset --soft HEAD~1
-
-# Undo last commit (discard changes)
-git reset --hard HEAD~1
-
-# Undo last commit pushed to remote
-git revert HEAD
-git push origin main
-
-# Undo specific file changes
-git checkout HEAD -- path/to/file
-
-# Fix last commit message
-git commit --amend -m "New message"
-
-# Add forgotten file to last commit
-git add forgotten-file
-git commit --amend --no-edit
+git status && git diff --stat
+kubectl diff -f manifest.yaml
 ```
 
-## Git Hooks
-
-### Pre-Commit Hook
-
-```bash
-#!/bin/bash
-# .git/hooks/pre-commit
-
-# Run linting
-npm run lint || exit 1
-
-# Run tests
-npm test || exit 1
-
-# Check for secrets
-if git diff --cached | grep -E '(password|api_key|secret)'; then
-    echo "Possible secret detected. Commit aborted."
-    exit 1
-fi
-```
-
-### Pre-Push Hook
-
-```bash
-#!/bin/bash
-# .git/hooks/pre-push
-
-# Run full test suite
-npm run test:all || exit 1
-
-# Check for console.log statements
-if git diff origin/main | grep -E 'console\.log'; then
-    echo "Remove console.log statements before pushing."
-    exit 1
-fi
-```
-
-## Anti-Patterns
-
-```
-# BAD: Committing directly to main
-git checkout main
-git commit -m "fix bug"
-
-# GOOD: Use feature branches and PRs
-
-# BAD: Committing secrets
-git add .env  # Contains API keys
-
-# GOOD: Add to .gitignore, use environment variables
-
-# BAD: Giant PRs (1000+ lines)
-# GOOD: Break into smaller, focused PRs
-
-# BAD: "Update" commit messages
-git commit -m "update"
-git commit -m "fix"
-
-# GOOD: Descriptive messages
-git commit -m "fix(auth): resolve redirect loop after login"
-
-# BAD: Rewriting public history
-git push --force origin main
-
-# GOOD: Use revert for public branches
-git revert HEAD
-
-# BAD: Long-lived feature branches (weeks/months)
-# GOOD: Keep branches short (days), rebase frequently
-
-# BAD: Committing generated files
-git add dist/
-git add node_modules/
-
-# GOOD: Add to .gitignore
-```
-
-## Quick Reference
-
-| Task | Command |
-|------|---------|
-| Create branch | `git checkout -b feature/name` |
-| Switch branch | `git checkout branch-name` |
-| Delete branch | `git branch -d branch-name` |
-| Merge branch | `git merge branch-name` |
-| Rebase branch | `git rebase main` |
-| View history | `git log --oneline --graph` |
-| View changes | `git diff` |
-| Stage changes | `git add .` or `git add -p` |
-| Commit | `git commit -m "message"` |
-| Push | `git push origin branch-name` |
-| Pull | `git pull origin branch-name` |
-| Stash | `git stash push -m "message"` |
-| Undo last commit | `git reset --soft HEAD~1` |
-| Revert commit | `git revert HEAD` |
+> Adapted from [BagelHole/DevOps-Security-Agent-Skills](https://github.com/BagelHole/DevOps-Security-Agent-Skills) (MIT); frontmatter, When to Use/Limitations, and safety boundaries added for upstream compliance. Docs-only import: helper scripts and templates not bundled.

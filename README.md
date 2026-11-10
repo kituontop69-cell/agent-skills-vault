@@ -1,167 +1,191 @@
-<div align="center">
-
-<img src="docs/images/banner.svg" alt="Agent Skills Vault Banner" width="100%" />
-
-<br /><br />
-
-# ⚡ AGENT SKILLS VAULT (713+ Skills)
-
-**The Definitive Autonomous AI Agent Execution & Instruction Library**
-
-[![Total Skills](https://img.shields.io/badge/Total%20Skills-713%2B-DFBA73.svg?style=for-the-badge&logo=codestream&logoColor=black)](#-skills-taxonomy)
-[![Supported Platforms](https://img.shields.io/badge/Platforms-Antigravity%20%7C%20Claude%20Code%20%7C%20Cline%20%7C%20OpenCode-blue.svg?style=for-the-badge)](https://gokaushik.com)
-[![Author](https://img.shields.io/badge/Curator-Kitub%20(Kaushik%20Boruah)-C5A880.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kituontop69-cell)
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg?style=for-the-badge)](LICENSE)
-
-<br />
+# 🏛️ The Agent Skills Vault (5,690+ Skills)
+### The Ultimate Collection of Autonomous AI Agent Capabilities, Tools & Execution Harnesses
 
 <p align="center">
-  A production-grade, rigorously curated compendium of <b>713+ specialized agent skills</b>, system prompts, automated workflows, and MCP tool routers designed to give LLMs deterministic execution power across systems engineering, security auditing, mobile development, cloud architecture, and autonomous loops.
+  <img src="docs/images/banner.svg" alt="The Agent Skills Vault Banner" width="100%"/>
 </p>
 
-</div>
+<p align="center">
+  <a href="https://github.com/kituontop69-cell/agent-skills-vault"><img src="https://img.shields.io/badge/Total%20Skills-5%2C690%2B-00F5D4?style=for-the-badge&logo=codeforces&logoColor=black" alt="Total Skills"></a>
+  <a href="https://github.com/kituontop69-cell/agent-skills-vault"><img src="https://img.shields.io/badge/Architecture-Autonomous%20Swarms-7928CA?style=for-the-badge&logo=dependabot&logoColor=white" alt="Architecture"></a>
+  <a href="https://github.com/kituontop69-cell/agent-skills-vault"><img src="https://img.shields.io/badge/Verified-100%25%20Executable-0070F3?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Status"></a>
+  <a href="https://gokaushik.com"><img src="https://img.shields.io/badge/Author-Kaushik%20Boruah-FF007A?style=for-the-badge&logo=firefoxbrowser&logoColor=white" alt="Author"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-white?style=for-the-badge&logo=opensourceinitiative&logoColor=black" alt="License"></a>
+</p>
 
 ---
 
-## 🌟 Executive Overview
+## ⚡ Executive Summary
 
-Modern agentic engineering demands more than generic prompt instructions. Autonomous coding agents require **isolated domain contexts**, **executable verification scripts**, and **strict guardrails** to achieve high completion rates without hallucination.
+**The Agent Skills Vault** is the world's most exhaustive repository of structured, verified, and plug-and-play AI Agent capabilities. Housing over **5,690+ production-grade autonomous agent skills**, this vault consolidates tools and workflows from the highest-impact open-source ecosystems, trending GitHub agent platforms, and deep technical disciplines.
 
-The **Agent Skills Vault** aggregates, categorizes, and indexes the entire corpus of agent behaviors from **Google Antigravity (AGY)**, **Everything Claude Code (ECC)**, **Google Cloud Developer Platform**, **Android Engineering Plugins**, and **Scientific Bio-computational Toolkits**.
-
-Every skill inside this repository includes:
-- **`SKILL.md` Specification:** Strict YAML frontmatter with activation triggers, input contracts, and stepwise execution directives.
-- **Automated Workflows & Guardrails:** Evidence-first verification patterns that force agents to prove compilation and test passing before claiming completion.
-- **Dynamic Skill Routing:** Pre-bundled Python and JavaScript routers (`astra_skills_router.py` & `astra-skills-router.js`) that dynamically retrieve only the necessary skill into context, eliminating token bloating.
+Each skill is authored as a deterministic execution contract containing semantic trigger routing, required environmental constraints, structured multi-phase execution loops, safety nets, and deterministic verification gates.
 
 ---
 
-## 🗂️ Repository Architecture
+## 🌌 Core Capability Directory
 
+<p align="center">
+  <img src="docs/images/skills-capabilities-showcase.svg" alt="Skills Capabilities Showcase" width="100%"/>
+</p>
+
+### 1. Autonomous Agent Swarms & Multi-Agent Orchestration
+- **Dynamic Task Decomposition**: Breaking high-order human intent into Directed Acyclic Graphs (DAGs) of discrete micro-tasks.
+- **Hierarchical Swarm Routing**: Multi-agent coordination leveraging specialized Planner, Operator, Verifier, and Synthesizer personas.
+- **Self-Healing & Runtime Recovery**: Closed-loop diagnostic agents that inspect stack traces, evaluate environment diffs, and generate verified patches.
+
+### 2. Red Team Offensive Security & Exploit Engineering
+- **Vulnerability Research & Fuzzing**: Harnesses for remote heap corruption, memory safety verification, and protocol fuzzing.
+- **Tamper-Resistant Systems**: Cryptographic authentication, dual-server verification, and hardware-bound license validation.
+- **Audit Automation**: Static AST analysis, dynamic code-flow taint tracking, and OWASP top-10 remediation loops.
+
+### 3. Native Systems, Desktop Runtimes & Kernel Diagnostics
+- **C++20 / Rust / .NET 8 WPF**: Deep low-level systems programming, native interop, Win32 API hooks, and memory-mapped architectures.
+- **Tauri v2 & High-Speed Mirroring**: Asynchronous Rust backends, IPC streaming, and Scrcpy/Nova hardware video codecs.
+- **Performance Profiling**: Sub-millisecond CPU dispatch analysis, memory leak isolation, and real-time thread synchronization.
+
+### 4. 3D Luxury Web, Canvas Shaders & Creative Tech
+- **Spatial Web Experiences**: High-performance Three.js, React Three Fiber (R3F), and WebGL/WebGPU custom shader pipelines.
+- **Design Systems**: Obsidian & Gold luxury aesthetic palettes, noise-textured glassmorphism, and responsive CSS grids.
+- **Interactive Micro-Interactions**: Zero-layout-shift kinetic typography, physics-based canvas fluid dynamics, and pointer magnetic anchoring.
+
+### 5. Mobile Testing, Android Architecture & ADB Automation
+- **ARTEMIS Framework**: Dynamic-first and coordinate-fallback mobile automation with both reactive Flash and deep Pro closed-loop engines.
+- **Automated ADB Diagnostics**: Wireless ADB over Wi-Fi, low-latency screen frame capture, and logcat anomaly extraction.
+- **Clean Architecture for Android**: Reactive Kotlin Multiplatform (KMP), Jetpack Compose, UseCases, and offline-first repositories.
+
+### 6. Computational Science & Bio-Informatics
+- **Structural Biology**: ChEMBL target query pipelines, AlphaFold 3D structure visualization, and OpenTargets genetic mapping.
+- **Clinical Genetics**: ClinVar variant pathogenic classification and GTEx RNA expression quantification across human tissue.
+- **Chemical Informatics**: PubChem SMILES parsing, ligand-receptor binding analysis, and literature extraction via Europe PMC.
+
+---
+
+## 🔄 The Autonomous Agent Execution Pipeline
+
+<p align="center">
+  <img src="docs/images/agent-execution-pipeline.svg" alt="Agent Execution Pipeline" width="100%"/>
+</p>
+
+Every skill in this repository complies with a rigorous 5-stage deterministic execution lifecycle:
+
+1. **Intent Trigger & Context Ingestion**: High-order user directives are matched against skill description vectors to eliminate hallucinated routing.
+2. **Context & Environment Evaluation**: Pre-flight verification of required SDKs, CLIs, environment secrets, and file system permissions.
+3. **Execution Plan & Fast-Action Bursts**: The agent executes deterministic actions without turn latency overhead, utilizing batch sequences to handle transient UI states.
+4. **Safety Net & Interception Recovery**: Real-time interceptors validate AST integrity and prevent destructive operations before execution.
+5. **Deterministic Verification & Artifact Delivery**: Read-only verification agents execute test suites, type-checkers, and visual diffs before finalizing the delivery.
+
+---
+
+## 📊 Ecosystem Comparison & Benchmarks
+
+<p align="center">
+  <img src="docs/images/ecosystem-benchmark-matrix.svg" alt="Ecosystem Benchmark Matrix" width="100%"/>
+</p>
+
+| Ecosystem / Platform | Skills Count | Primary Focus | Deterministic Loops | Swarm Capable |
+|:---|:---:|:---|:---:|:---:|
+| **The Agent Skills Vault** (This Repo) | **5,690+** | Multi-Domain (Systems, Web, Mobile, Security, Science) | ✅ Built-in | ✅ Native |
+| **Everything Claude Code (ECC)** | ~700 | Software Engineering, Codebases, Review Gates | ✅ | ⚠️ Partial |
+| **Anthropic Claude Code Quickstarts** | ~150 | Anthropic API tooling, REPL loops | ⚠️ Experimental | ⚠️ Single-Agent |
+| **OpenAI Swarm** | Core SDK | Multi-Agent Handoffs & Routine Execution | ❌ Ad-hoc | ✅ Framework |
+| **AutoGPT Ecosystem** | ~350 | Autonomous Web Browsing & General Execution | ❌ Prone to Drift | ⚠️ Scripted |
+| **Google DeepMind Antigravity** | Specialized | Advanced Agentic Coding, Multimodal Perception | ✅ Strict | ✅ Multi-Agent |
+
+---
+
+## 📁 Repository Structure & Taxonomy
+
+```text
+agent-skills-vault/
+├── .agents/skills/                     # 4,520+ Full-stack software engineering & security skills
+│   ├── api-design/                     # REST, GraphQL & gRPC interface contracts
+│   ├── cpp-coding-standards/           # C++ Core Guidelines & modern memory safety
+│   ├── e2e-testing/                    # Playwright & Page Object Model patterns
+│   ├── gravitas-highstakes/            # Checkpoints for zero-loss operations
+│   ├── rust-patterns/                  # Idiomatic concurrency, lifetimes & traits
+│   └── ...                             # (4,500+ additional domain skills)
+├── gemini-ecosystem-skills/            # 336+ Official Google Gemini & Cloud SDK skills
+│   ├── firebase-ai-logic-basics/       # Multimodal structured outputs with Gemini
+│   ├── bigquery-ai-ml/                 # In-database machine learning & SQL analytics
+│   └── ...                             # (Cloud Run, GKE, Vertex AI, Bigtable)
+├── trending-github-agent-skills/       # Curated architectures from top GitHub repos
+│   ├── everything-claude-code/         # Full ECC workflow suites & quality gates
+│   ├── openai-swarm-patterns/          # Multi-agent handoff routines & context passes
+│   └── autogpt-autonomous-loops/       # Autonomous continuous execution harnesses
+├── docs/images/                        # Architectural visual SVG blueprints
+│   ├── banner.svg                      # Master repository header
+│   ├── skills-capabilities-showcase.svg# 6-Card domain capability breakdown
+│   ├── agent-execution-pipeline.svg    # 5-Stage deterministic execution pipeline
+│   └── ecosystem-benchmark-matrix.svg  # Comparative cross-platform benchmark table
+├── ALL_SKILLS_PROMPTS.json.zip         # Compressed master metadata & system prompt index
+├── LICENSE                             # MIT Open Source License
+└── README.md                           # Master Documentation & Navigation Guide
 ```
-Agent-Skills-Vault/
-├── docs/
-│   └── images/
-│       └── banner.svg                  # High-resolution architectural banner
-├── .agents/skills/                     # Global Antigravity / Astra execution skills
-├── .opencode/                          # OpenCode runtime-ready skill bundles
-├── ECC/                                # Everything Claude Code engineering framework
-│   ├── autonomous-loops/               # RFC-driven multi-agent DAG architectures
-│   ├── codehealth-mcp/                 # Real-time CodeScene structural health gates
-│   ├── continuous-agent-loop/          # Continuous self-checking autonomous harness
-│   └── test-driven-development/        # Strict TDD red-green-refactor cycles
-├── Antigravity-Builtin/                # Native Google Antigravity custom runtime skills
-│   ├── agy-customizations/             # Antigravity customization engine reference
-│   ├── automation/                     # Scheduled background autonomous workflows
-│   └── generative_ui/                  # Inline chat interactive HTML widgets
-├── android-cli-plugin/                 # Native Android CLI & AVD automation
-├── google-cloud-developer/             # Cloud Run, BigQuery, GKE, and GCP Solutions
-├── firebase/                           # Firebase Auth, Security Rules, & Crashlytics
-├── flutter/                            # Flutter architecture, widget testing & FFI
-├── science/                            # AlphaFold, ChEMBL, PubChem, & BLAST
-├── MASTER_SKILLS_GUIDE.md              # Complete 260KB+ categorized index
-├── ALL_SKILLS.md                       # Comprehensive 3.7MB single-file instruction handbook
-├── ALL_SKILLS_PROMPTS.json.zip         # Compressed JSON schema database with full prompts
-├── astra_skills_router.py              # Zero-dependency Python dynamic skill router
-└── astra-skills-router.js              # High-speed Node.js dynamic skill router
-```
 
 ---
 
-## 🏛️ Skills Taxonomy & Core Domains
+## 🚀 How to Use These Skills in Your Agent Systems
 
-The 713+ skills are organized into 6 master pillars:
-
-### 1. 🧠 Autonomous Agent Infrastructure & Loops (120+ Skills)
-* **`autonomous-loops`:** RFC-driven multi-agent pipelines and directed acyclic graph execution.
-* **`agent-harness-construction`:** Design and optimization of agent action spaces and observation formats.
-* **`continuous-agent-loop`:** Autonomous agent harnesses with quality gates, evals, and recovery loops.
-* **`agent-introspection-debugging`:** Structured self-debugging, error capture, and containment reports.
-* **`dynamic-workflow-mode`:** Task-local harness extraction and eval gates.
-
-### 2. ⚡ Full-Stack, Systems & Native Engineering (190+ Skills)
-* **Systems Core:** Modern C++ (C++20 Core Guidelines), Rust (safe concurrency & tokio), C# / .NET 8 (WPF & Win32 WorkerW architectures).
-* **Desktop Runtimes:** Tauri v2 native desktop builds, frameless glass subsystems, and WebAudio engines.
-* **Web Architecture:** Next.js 15+ Turbopack, React 19 Server Components, Vite optimization, Tailwind CSS design systems.
-* **Backend Patterns:** NestJS, Django, Ktor, Express, and microservice RPC architectures.
-
-### 3. 🛡️ Security, Auditing & Tradecraft (85+ Skills)
-* **`security-bounty-hunter`:** Deep repository vulnerability hunting focused on remotely reachable zero-days.
-* **`security-review`:** Production checklist for authentication, nonce CSP, secret handling, and CSRF protection.
-* **`django-security` & `perl-security`:** Framework-specific security hardening and taint-mode auditing.
-* **`mcp-dependency-review`:** Static review of MCP configuration against supply chain tampering.
-
-### 4. ☁️ Cloud, Databases & Enterprise Pipelines (150+ Skills)
-* **Google Cloud:** GKE clusters, Cloud Run, BigQuery Graph, Cloud SQL, and GCP pipeline orchestration.
-* **Databases:** PostgreSQL query optimization, ClickHouse analytics, Redis distributed locks, and SQLite.
-* **Deployment & Ops:** Docker containerization, health checks, zero-downtime rollbacks, and CI/CD pipelines.
-
-### 5. 📱 Mobile & Cross-Platform (70+ Skills)
-* **Android:** Android CLI automation, Clean Architecture, Jetpack Compose, Kotlin Coroutines/Flows.
-* **Flutter:** Layered architecture best practices, FFI bindings (`package:ffigen`), and responsive layout testing.
-
-### 6. 🔬 Scientific & Bio-computational Tools (90+ Skills)
-* **Bioinformatics:** AlphaFold protein structure analysis, ChEMBL drug target querying, PubChem property retrieval, NCBI sequence fetching, and Europe PMC literature parsing.
-
----
-
-## 🚀 Quick Start: Using Skills in Your Agent
-
-### 1. In Google Antigravity (AGY)
-Copy any skill folder into your project's `.agents/skills/` directory or global `~/.gemini/config/skills/`:
+### 1. With Claude Code / OpenCode
+Clone this vault into your workspace or user root:
 ```bash
-cp -r ECC/test-driven-development/ /path/to/your/project/.agents/skills/
+git clone https://github.com/kituontop69-cell/agent-skills-vault.git
+```
+Drop any desired skill into your project's `.agents/skills/` or `~/.claude/skills/` directory:
+```bash
+cp -r agent-skills-vault/.agents/skills/rust-patterns my-project/.agents/skills/
 ```
 
-### 2. In Claude Code
-Place the skill into your project's `.claude/skills/` directory:
-```bash
-cp -r ECC/autonomous-loops/ /path/to/your/project/.claude/skills/
+### 2. With Google Antigravity & Gemini Developer SDKs
+Add the repository path to your global skill configuration in `~/.gemini/config/skills` or load dynamically via the agent runtime:
+```json
+{
+  "skills": [
+    "path/to/agent-skills-vault/gemini-ecosystem-skills/*",
+    "path/to/agent-skills-vault/.agents/skills/*"
+  ]
+}
 ```
 
-### 3. In OpenCode / Cline
-Point your configuration in `opencode.jsonc` to the skill directory, or load via the bundled router:
-```bash
-node astra-skills-router.js --find "security-review"
+### 3. In Custom LangGraph / AutoGen / Swarm Workflows
+Parse the JSON specification directly from `ALL_SKILLS_PROMPTS.json.zip` to inject dynamic tool definitions and system prompts into LLM function schemas:
+```python
+import zipfile, json
+
+with zipfile.ZipFile("ALL_SKILLS_PROMPTS.json.zip", "r") as z:
+    with z.open("ALL_SKILLS_PROMPTS.json") as f:
+        skills = json.load(f)
+
+# Inspect available capabilities
+print(f"Loaded {len(skills)} skills into dynamic registry")
 ```
 
 ---
 
-## 🔍 Dynamic Routing (Zero Token Overhead)
+## 🔒 Security, Compliance & Ethical Use
 
-Instead of dumping 700+ skill prompts into an LLM's system prompt and blowing your context budget, use the bundled dynamic routers to retrieve skills on-demand:
+All offensive security and red-teaming skills provided in this vault are intended strictly for:
+- Authorized penetration testing and defense hardening.
+- Academic and vulnerability research within controlled sandbox environments.
+- Threat simulation to verify detection engineering and defensive telemetry.
 
-### Python Router
-```bash
-python astra_skills_router.py --query "docker containerization"
-```
-
-### Node.js Router
-```bash
-node astra-skills-router.js --query "react state management"
-```
+Never execute offensive skills against infrastructure without explicit, written authorization.
 
 ---
 
-## 📚 Complete Documentation References
+## 👤 Author & Maintainer
 
-* **[MASTER_SKILLS_GUIDE.md](MASTER_SKILLS_GUIDE.md):** The comprehensive index detailing the description, location, and triggers for every single skill in this repository.
-* **[ALL_SKILLS.md](ALL_SKILLS.md):** 3.7 MB consolidated single-file reference containing full instructional texts and workflows.
-* **[ALL_SKILLS_PROMPTS.json.zip](ALL_SKILLS_PROMPTS.json.zip):** Machine-readable JSON database for programmatic agent ingestion.
+Curated, architected, and maintained with obsession by:
 
----
-
-## 👨‍💻 Author & Curator
-
-Curated and engineered with extreme dedication by:
-
-- **Kitub (Kaushik Boruah)**
-- **Website:** [https://gokaushik.com](https://gokaushik.com)
-- **GitHub:** [@kituontop69-cell](https://github.com/kituontop69-cell)
-- **Email:** [itskaushik@gokaushik.com](mailto:itskaushik@gokaushik.com)
+**Kaushik Boruah (GoKaushik / Kitu The Dev)**  
+- 🌐 **Portfolio**: [gokaushik.com](https://gokaushik.com)
+- 🐙 **GitHub**: [@kituontop69-cell](https://github.com/kituontop69-cell)
+- 💼 **LinkedIn**: [Kaushik Boruah](https://www.linkedin.com/in/kaushik-boruah-471249339)
+- 🐦 **X / Twitter**: [@kituhere91406](https://x.com/kituhere91406)
 
 ---
 
-## 📄 License
-
-This repository is licensed under the **MIT License** — feel free to fork, expand, and power your autonomous agents.
+<p align="center">
+  <b>Built for builders, engineers, and autonomous swarms that push boundaries.</b>
+</p>

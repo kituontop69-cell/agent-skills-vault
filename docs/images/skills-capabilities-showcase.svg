@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070709" />
+      <stop offset="50%" stop-color="#0E0E14" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C5A880" />
+      <stop offset="50%" stop-color="#DFBA73" />
+      <stop offset="100%" stop-color="#F3DC9D" />
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.05)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.015)" />
+    </linearGradient>
+    <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="680" fill="url(#bg2)" />
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="0.5">
+    <line x1="0" y1="80" x2="1200" y2="80" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="380" x2="1200" y2="380" />
+    <line x1="0" y1="480" x2="1200" y2="480" />
+    <line x1="0" y1="580" x2="1200" y2="580" />
+  </g>
+
+  <!-- Ambient light -->
+  <circle cx="600" cy="80" r="140" fill="#C5A880" opacity="0.1" filter="url(#glow2)" />
+
+  <!-- Header Badge -->
+  <g transform="translate(470, 35)">
+    <rect width="260" height="28" rx="14" fill="rgba(197,168,128,0.1)" stroke="#C5A880" stroke-width="0.8" />
+    <circle cx="16" cy="14" r="3.5" fill="#10B981" />
+    <text x="28" y="18" fill="#DFBA73" font-family="monospace" font-size="10" font-weight="600" letter-spacing="2">CAPABILITY DIRECTORY</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="105" text-anchor="middle" fill="#FFFFFF" font-family="'Times New Roman', Georgia, serif" font-size="34">
+    WHAT CAN THESE <tspan fill="url(#gold2)" font-style="italic">5,000+ SKILLS</tspan> DO?
+  </text>
+  <text x="600" y="132" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-family="sans-serif" font-size="13" font-weight="300">
+    Unleashing deterministic, production-grade autonomous capabilities across the modern technology landscape
+  </text>
+
+  <!-- 6 Feature Cards Grid (2 rows of 3) -->
+
+  <!-- ROW 1 -->
+  <!-- Card 1: Autonomous Swarms -->
+  <g transform="translate(60, 165)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(197,168,128,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#DFBA73" font-family="monospace" font-size="14">⚡</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Autonomous Coding Swarms</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Multi-Agent Git Worktrees (DevFleet)</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Dispatches isolated subagents in independent worktrees without file conflicts.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Strict Test-Driven Development (TDD)</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Enforces failing assertions before implementing code to guarantee zero regressions.</text>
+    <text x="25" y="198" fill="#C5A880" font-family="monospace" font-size="10">skills: autonomous-loops, devfleet, tdd</text>
+  </g>
+
+  <!-- Card 2: Security & Tradecraft -->
+  <g transform="translate(430, 165)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(244,63,94,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#F43F5E" font-family="monospace" font-size="14">🛡️</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Red Team &amp; Security Audits</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Vulnerability Bounty Hunting</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Scans codebases for remote command execution, SQL injection, and token leakage.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Nonce CSP &amp; Tamper Hardening</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Audits Content-Security-Policy headers and prevents script injection attacks.</text>
+    <text x="25" y="198" fill="#F43F5E" font-family="monospace" font-size="10">skills: security-review, bounty-hunter</text>
+  </g>
+
+  <!-- Card 3: Systems & Native Desktop -->
+  <g transform="translate(800, 165)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(59,130,246,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#60A5FA" font-family="monospace" font-size="14">💻</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Native Systems &amp; Runtimes</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Rust (Tokio) &amp; Tauri v2 Desktop</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Architects ultra-low latency desktop apps with native memory safety.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Win32 WorkerW &amp; Hardware Video</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Direct GPU video playback pinned behind desktop icons at 60 FPS under 1% CPU.</text>
+    <text x="25" y="198" fill="#60A5FA" font-family="monospace" font-size="10">skills: rust-patterns, cpp-standards, tauri</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Card 4: 3D Luxury Web & Motion -->
+  <g transform="translate(60, 415)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(234,179,8,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#EAB308" font-family="monospace" font-size="14">✨</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Quiet Luxury &amp; 3D Motion</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· 3D Spatial Continuum &amp; GSAP</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Hardware-accelerated perspective tilts, gyro-tracking, and spatial depth tunnels.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Real-Time Web Audio DSP</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Dynamic canvas frequency visualizers, audiophile spectrum synthesis, and zero jitter.</text>
+    <text x="25" y="198" fill="#EAB308" font-family="monospace" font-size="10">skills: quiet-luxury, motion-primitives, 3d-web</text>
+  </g>
+
+  <!-- Card 5: Mobile & Device Automation -->
+  <g transform="translate(430, 415)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(16,185,129,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#10B981" font-family="monospace" font-size="14">📱</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Mobile Engineering &amp; ADB</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· ARTEMIS Device Testing Loop</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Interactive closed-loop Android automation, gesture injection, and log diagnostics.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Low-Latency Mirroring (Nova)</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Hardware H.264/H.265 stream decoding at 120 FPS over Wi-Fi TCP/IP.</text>
+    <text x="25" y="198" fill="#10B981" font-family="monospace" font-size="10">skills: android-clean-architecture, flutter-a11y</text>
+  </g>
+
+  <!-- Card 6: Cloud, Data & Science -->
+  <g transform="translate(800, 415)">
+    <rect width="340" height="220" rx="14" fill="url(#cardBg)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="340" height="3" rx="1.5" fill="url(#gold2)" />
+    <circle cx="35" cy="38" r="16" fill="rgba(168,85,247,0.15)" />
+    <text x="35" y="43" text-anchor="middle" fill="#C084FC" font-family="monospace" font-size="14">🔬</text>
+    <text x="65" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Cloud &amp; Computational Science</text>
+    
+    <text x="25" y="85" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Google Cloud &amp; BigQuery Pipelines</text>
+    <text x="25" y="110" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Cloud Run microservices, automated autoscaling, and streaming analytical queries.</text>
+    <text x="25" y="140" fill="rgba(255,255,255,0.7)" font-family="sans-serif" font-size="12" font-weight="400">· Bio-Informatics &amp; AlphaFold</text>
+    <text x="25" y="165" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="11">Protein structure analysis, ChEMBL drug target modeling, and genomic variant queries.</text>
+    <text x="25" y="198" fill="#C084FC" font-family="monospace" font-size="10">skills: bigquery-ai, chembl, alphafold</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="660" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="10" letter-spacing="1">
+    POWERED BY AGENT SKILLS VAULT · CURATED BY KITUB (@KITUONTOP69-CELL)
+  </text>
+</svg>
