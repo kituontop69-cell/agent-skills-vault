@@ -45,31 +45,30 @@
   <circle cx="600" cy="140" r="180" fill="#C5A880" opacity="0.08" filter="url(#glow)" />
 
   <!-- Badge Pill -->
-  <g transform="translate(460, 45)">
-    <rect width="280" height="32" rx="16" fill="rgba(197, 168, 128, 0.12)" stroke="#C5A880" stroke-width="1" />
+  <g transform="translate(450, 42)">
+    <rect width="300" height="32" rx="16" fill="rgba(197, 168, 128, 0.12)" stroke="#C5A880" stroke-width="1" />
     <circle cx="20" cy="16" r="4" fill="#10B981" />
-    <text x="34" y="21" fill="#DFBA73" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="2">713+ AGENT SKILLS ARCHIVE</text>
+    <text x="34" y="21" fill="#DFBA73" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="2">5,600+ AGENT SKILLS ARCHIVE</text>
   </g>
 
   <!-- Title -->
   <text x="600" y="130" text-anchor="middle" fill="#FFFFFF" font-family="'Times New Roman', Georgia, serif" font-size="44" font-weight="400" letter-spacing="1">
     AGENT <tspan fill="url(#gold)" font-style="italic">SKILLS VAULT</tspan>
   </text>
-  <text x="600" y="165" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="300" letter-spacing="0.5">
+  <text x="600" y="165" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="300" letter-spacing="0.5">
     The Definitive Autonomous AI Agent Execution Library for Antigravity, Claude Code, Cline &amp; OpenCode
   </text>
 
-  <!-- Category Architecture Pillars -->
-  <!-- Pillar 1: AI & Agentic OS -->
+  <!-- Pillar 1: Autonomous Swarms -->
   <g transform="translate(60, 220)">
     <rect width="250" height="190" rx="14" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="250" height="3" rx="1.5" fill="url(#gold)" />
     <text x="24" y="38" fill="#DFBA73" font-family="monospace" font-size="11" letter-spacing="1">01 // ORCHESTRATION</text>
-    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="17" font-weight="600">Autonomous Loops</text>
-    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Agent Harness Construction</text>
-    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Eval-first Dynamic Workflow</text>
-    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Agent Introspection &amp; Recovery</text>
-    <text x="24" y="164" fill="#C5A880" font-family="monospace" font-size="11">120+ Core Skills</text>
+    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Autonomous Loops</text>
+    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Agent Harness Construction</text>
+    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Dynamic Eval Workflows</text>
+    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Introspection &amp; Recovery</text>
+    <text x="24" y="168" fill="#C5A880" font-family="monospace" font-size="11">Multi-Agent Swarms</text>
   </g>
 
   <!-- Pillar 2: Systems & Full-Stack -->
@@ -77,11 +76,11 @@
     <rect width="250" height="190" rx="14" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="250" height="3" rx="1.5" fill="url(#gold)" />
     <text x="24" y="38" fill="#DFBA73" font-family="monospace" font-size="11" letter-spacing="1">02 // SYSTEMS &amp; STACK</text>
-    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="17" font-weight="600">Native Engineering</text>
-    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Rust, C++, Tauri v2, Win32</text>
-    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· React 19, Next.js, Web Audio</text>
-    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· High-Throughput Pipelines</text>
-    <text x="24" y="164" fill="#C5A880" font-family="monospace" font-size="11">190+ Language Skills</text>
+    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Native Engineering</text>
+    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Rust, C++, Tauri v2, Win32</text>
+    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· React 19, Next.js, WebGL</text>
+    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· High-Speed Video Decoders</text>
+    <text x="24" y="168" fill="#C5A880" font-family="monospace" font-size="11">Low-Level &amp; Spatial</text>
   </g>
 
   <!-- Pillar 3: Security & Tradecraft -->
@@ -89,11 +88,11 @@
     <rect width="250" height="190" rx="14" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="250" height="3" rx="1.5" fill="url(#gold)" />
     <text x="24" y="38" fill="#DFBA73" font-family="monospace" font-size="11" letter-spacing="1">03 // TRADECRAFT</text>
-    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="17" font-weight="600">Security &amp; Hardening</text>
-    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Security Bounty Hunter</text>
-    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Django, Perl, Node Audit</text>
-    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Nonce CSP, Token Hardening</text>
-    <text x="24" y="164" fill="#C5A880" font-family="monospace" font-size="11">85+ Audit Skills</text>
+    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Offensive &amp; Audit</text>
+    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· 76 Claude-Red Harnesses</text>
+    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Vulnerability Research</text>
+    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Defense &amp; Nonce CSP Hardening</text>
+    <text x="24" y="168" fill="#C5A880" font-family="monospace" font-size="11">Red Team Verified</text>
   </g>
 
   <!-- Pillar 4: Cloud & Mobile Tools -->
@@ -101,15 +100,15 @@
     <rect width="240" height="190" rx="14" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="240" height="3" rx="1.5" fill="url(#gold)" />
     <text x="24" y="38" fill="#DFBA73" font-family="monospace" font-size="11" letter-spacing="1">04 // CLOUD &amp; MOBILE</text>
-    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="17" font-weight="600">Cloud &amp; SDK Hub</text>
-    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Android CLI &amp; Flutter Dev</text>
-    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Google Cloud, BigQuery, Run</text>
-    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12" font-weight="300">· Firebase &amp; Bio-Computational</text>
-    <text x="24" y="164" fill="#C5A880" font-family="monospace" font-size="11">310+ Platform Skills</text>
+    <text x="24" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Mobile &amp; Cloud Hub</text>
+    <text x="24" y="92" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· ARTEMIS Android Testing</text>
+    <text x="24" y="114" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Flutter, Kotlin Multiplatform</text>
+    <text x="24" y="136" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="12">· Google Cloud, Run &amp; BigQuery</text>
+    <text x="24" y="168" fill="#C5A880" font-family="monospace" font-size="11">Full Ecosystem</text>
   </g>
 
   <!-- Footer Credit Line -->
-  <text x="600" y="450" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="11" letter-spacing="1">
-    CURATED &amp; ENGINEERED BY KAUSHIK BORUAH (@KITUONTOP69-CELL) · OPEN SOURCE MIT
+  <text x="600" y="450" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="11" letter-spacing="1">
+    CURATED &amp; ARCHITECTED BY KAUSHIK BORUAH (@KITUONTOP69-CELL) · MIT
   </text>
 </svg>

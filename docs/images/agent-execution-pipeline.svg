@@ -40,94 +40,97 @@
   </g>
 
   <!-- Title -->
-  <text x="600" y="85" text-anchor="middle" fill="#FFFFFF" font-family="'Times New Roman', Georgia, serif" font-size="32">
+  <text x="600" y="85" text-anchor="middle" fill="#FFFFFF" font-family="'Times New Roman', Georgia, serif" font-size="30">
     HOW AN AI AGENT <tspan fill="url(#gold3)" font-style="italic">EXECUTES A SKILL</tspan>
   </text>
   <text x="600" y="112" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="13" font-weight="300">
     Zero Token Bloat · Deterministic Stepwise Verification · Closed-Loop Delivery
   </text>
 
-  <!-- Flow Steps (5 Steps connected by arrows) -->
+  <!-- Flow Steps (5 Steps) -->
 
-  <!-- Step 1: User Intent -->
+  <!-- Step 1: User Goal -->
   <g transform="translate(50, 160)">
-    <rect width="195" height="230" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="195" height="240" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="195" height="3" rx="1.5" fill="#60A5FA" />
-    <text x="20" y="35" fill="#60A5FA" font-family="monospace" font-size="11" font-weight="600">STEP 01</text>
-    <text x="20" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">User Goal</text>
-    <text x="20" y="95" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11" line-height="1.5">
-      Human or system issues high-level request (e.g. "Build RAT analysis module with strict TDD").
+    <text x="18" y="32" fill="#60A5FA" font-family="monospace" font-size="11" font-weight="600">STEP 01</text>
+    <text x="18" y="60" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="600">User Goal</text>
+    
+    <text x="18" y="92" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
+      <tspan x="18" dy="0">Human partner issues</tspan>
+      <tspan x="18" dy="16">high-level directive</tspan>
+      <tspan x="18" dy="16">(e.g. TDD, C++ engine,</tspan>
+      <tspan x="18" dy="16">or security audit).</tspan>
     </text>
-    <rect x="20" y="170" width="155" height="35" rx="6" fill="rgba(96,165,250,0.1)" stroke="rgba(96,165,250,0.3)" />
-    <text x="30" y="192" fill="#93C5FD" font-family="monospace" font-size="10">Intent Evaluated</text>
+    <rect x="18" y="185" width="159" height="32" rx="6" fill="rgba(96,165,250,0.1)" stroke="rgba(96,165,250,0.3)" />
+    <text x="28" y="205" fill="#93C5FD" font-family="monospace" font-size="10">Intent Evaluated</text>
   </g>
-
-  <!-- Arrow 1 -> 2 -->
-  <path d="M 255 275 L 275 275" stroke="#DFBA73" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="3,3" />
 
   <!-- Step 2: Dynamic Skill Routing -->
   <g transform="translate(285, 160)">
-    <rect width="195" height="230" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="195" height="240" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="195" height="3" rx="1.5" fill="#DFBA73" />
-    <text x="20" y="35" fill="#DFBA73" font-family="monospace" font-size="11" font-weight="600">STEP 02</text>
-    <text x="20" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Dynamic Router</text>
-    <text x="20" y="95" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
-      astra_skills_router scans 5,000+ skills and loads ONLY the matching SKILL.md.
+    <text x="18" y="32" fill="#DFBA73" font-family="monospace" font-size="11" font-weight="600">STEP 02</text>
+    <text x="18" y="60" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="600">Dynamic Router</text>
+    
+    <text x="18" y="92" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
+      <tspan x="18" dy="0">Agent router scans</tspan>
+      <tspan x="18" dy="16">5,600+ skills and</tspan>
+      <tspan x="18" dy="16">loads ONLY matching</tspan>
+      <tspan x="18" dy="16">SKILL.md contract.</tspan>
     </text>
-    <rect x="20" y="170" width="155" height="35" rx="6" fill="rgba(223,186,115,0.1)" stroke="rgba(223,186,115,0.3)" />
-    <text x="30" y="192" fill="#DFBA73" font-family="monospace" font-size="10">0 Token Waste</text>
+    <rect x="18" y="185" width="159" height="32" rx="6" fill="rgba(223,186,115,0.1)" stroke="rgba(223,186,115,0.3)" />
+    <text x="28" y="205" fill="#DFBA73" font-family="monospace" font-size="10">0 Token Waste</text>
   </g>
 
-  <!-- Arrow 2 -> 3 -->
-  <path d="M 490 275 L 510 275" stroke="#DFBA73" stroke-width="2" stroke-dasharray="3,3" />
-
-  <!-- Step 3: Context & Guardrails -->
+  <!-- Step 3: Strict Contract -->
   <g transform="translate(520, 160)">
-    <rect width="195" height="230" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-    <rect width="195" height="3" rx="1.5" fill="#A855F7" />
-    <text x="20" y="35" fill="#C084FC" font-family="monospace" font-size="11" font-weight="600">STEP 03</text>
-    <text x="20" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Strict Contract</text>
-    <text x="20" y="95" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
-      Skill activates guardrails: prerequisite verification, safety bounds, and phase goals.
+    <rect width="195" height="240" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="195" height="3" rx="1.5" fill="#F43F5E" />
+    <text x="18" y="32" fill="#F43F5E" font-family="monospace" font-size="11" font-weight="600">STEP 03</text>
+    <text x="18" y="60" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="600">Strict Contract</text>
+    
+    <text x="18" y="92" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
+      <tspan x="18" dy="0">Agent ingests rules,</tspan>
+      <tspan x="18" dy="16">environment bounds,</tspan>
+      <tspan x="18" dy="16">required CLI tools,</tspan>
+      <tspan x="18" dy="16">and safety criteria.</tspan>
     </text>
-    <rect x="20" y="170" width="155" height="35" rx="6" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.3)" />
-    <text x="30" y="192" fill="#C084FC" font-family="monospace" font-size="10">Guardrails Locked</text>
+    <rect x="18" y="185" width="159" height="32" rx="6" fill="rgba(244,63,94,0.1)" stroke="rgba(244,63,94,0.3)" />
+    <text x="28" y="205" fill="#F43F5E" font-family="monospace" font-size="10">Guaranteed Scope</text>
   </g>
 
-  <!-- Arrow 3 -> 4 -->
-  <path d="M 725 275 L 745 275" stroke="#DFBA73" stroke-width="2" stroke-dasharray="3,3" />
-
-  <!-- Step 4: Stepwise Execution -->
+  <!-- Step 4: Fast Action Bursts -->
   <g transform="translate(755, 160)">
-    <rect width="195" height="230" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-    <rect width="195" height="3" rx="1.5" fill="#F59E0B" />
-    <text x="20" y="35" fill="#FBBF24" font-family="monospace" font-size="11" font-weight="600">STEP 04</text>
-    <text x="20" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Fast-Action Burst</text>
-    <text x="20" y="95" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
-      Agent invokes tools, writes files, compiles code, and tests output in real-time sandbox.
+    <rect width="195" height="240" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="195" height="3" rx="1.5" fill="#EAB308" />
+    <text x="18" y="32" fill="#EAB308" font-family="monospace" font-size="11" font-weight="600">STEP 04</text>
+    <text x="18" y="60" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="600">Fast Action Burst</text>
+    
+    <text x="18" y="92" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
+      <tspan x="18" dy="0">Executes actions in</tspan>
+      <tspan x="18" dy="16">rapid bursts, beating</tspan>
+      <tspan x="18" dy="16">turn latencies with</tspan>
+      <tspan x="18" dy="16">in-flight auto-heal.</tspan>
     </text>
-    <rect x="20" y="170" width="155" height="35" rx="6" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.3)" />
-    <text x="30" y="192" fill="#FBBF24" font-family="monospace" font-size="10">Evidence Recorded</text>
+    <rect x="18" y="185" width="159" height="32" rx="6" fill="rgba(234,179,8,0.1)" stroke="rgba(234,179,8,0.3)" />
+    <text x="28" y="205" fill="#EAB308" font-family="monospace" font-size="10">Sub-second Speed</text>
   </g>
 
-  <!-- Arrow 4 -> 5 -->
-  <path d="M 960 275 L 980 275" stroke="#DFBA73" stroke-width="2" stroke-dasharray="3,3" />
-
-  <!-- Step 5: Verified Delivery -->
+  <!-- Step 5: Verification & Delivery -->
   <g transform="translate(990, 160)">
-    <rect width="165" height="230" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <rect width="165" height="240" rx="14" fill="url(#cardGrad3)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
     <rect width="165" height="3" rx="1.5" fill="#10B981" />
-    <text x="18" y="35" fill="#10B981" font-family="monospace" font-size="11" font-weight="600">STEP 05</text>
-    <text x="18" y="65" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="600">Final Gate</text>
-    <text x="18" y="95" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
-      Exit verification confirms zero build errors before completing task.
+    <text x="18" y="32" fill="#10B981" font-family="monospace" font-size="11" font-weight="600">STEP 05</text>
+    <text x="18" y="60" fill="#FFFFFF" font-family="sans-serif" font-size="15" font-weight="600">Verified Exit</text>
+    
+    <text x="18" y="92" fill="rgba(255,255,255,0.6)" font-family="sans-serif" font-size="11">
+      <tspan x="18" dy="0">Read-only verifier</tspan>
+      <tspan x="18" dy="16">audits tests, diffs,</tspan>
+      <tspan x="18" dy="16">and evidence before</tspan>
+      <tspan x="18" dy="16">handing to user.</tspan>
     </text>
-    <rect x="18" y="170" width="130" height="35" rx="6" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)" />
-    <text x="28" y="192" fill="#34D399" font-family="monospace" font-size="10">✓ 100% Passing</text>
+    <rect x="18" y="185" width="129" height="32" rx="6" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)" />
+    <text x="26" y="205" fill="#10B981" font-family="monospace" font-size="10">100% Tested</text>
   </g>
-
-  <!-- Footer -->
-  <text x="600" y="440" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="10" letter-spacing="1">
-    AGENT SKILLS VAULT ARCHITECTURE · CURATED BY KITUB (@KITUONTOP69-CELL)
-  </text>
 </svg>
